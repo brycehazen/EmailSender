@@ -1,0 +1,21 @@
+!doctype html>
+<html>
+<head>
+    <title>Email Preview</title>
+</head>
+<body>
+    <h1>Email Preview</h1>
+    <p>Here is a preview of the first email:</p>
+    <p>{{preview_email}}</p>
+    <p>These are the emails that will be sent:</p>
+    <ul>
+        {% for email in emails %}
+        <li>{{email}}</li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="/send" enctype="multipart/form-data">
+        <input type="hidden" name="email_template" value="{{email_template}}">
+        <input type="submit" value="Send Emails">
+    </form>
+</body>
+</html>
