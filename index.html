@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>Email Sender</title>
+</head>
+<body>
+    <h1>Upload CSV and Edit Email Template</h1>
+    <form method="post" action="/preview" enctype="multipart/form-data">
+        <label for="csvfile">Upload CSV:</label><br>
+        <input type="file" id="csvfile" name="csvfile" accept=".csv"><br>
+        <label for="email_template">Email Template:</label><br>
+        <textarea id="email_template" name="email_template" rows="4" cols="50">
+        Dear {name},
+        Thank you for your generous donation to our fundraiser. We're making great progress, thanks to you and others like you. 
+        Here's your donation summary:
+        Amount donated: {donation_amount}
+        Thanks again for your support!
+        Best regards,
+        [Your Name]
+        </textarea><br>
+        <input type="submit" value="Next">
+    </form>
+</body>
+</html>
